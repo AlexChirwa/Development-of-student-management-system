@@ -1,0 +1,275 @@
+use StdMng2023V2
+select sno,sname from t_Student
+select*from t_Student
+select top 3*from t_Student
+select sno,sname,(datepart(year,getdate())-sage)as BirthYear from t_Student
+select sname,lower(sdept)as Isdept from t_Student
+select distinct sno from t_sc
+
+
+select sname,sage
+from t_student
+where sage>24
+
+select sname,sage
+from t_student
+where sage>24 and sgender='M'
+
+select sname,sgender,sage
+from t_Student
+where sage between 28 and 30
+
+select sname,sgender,sage
+from t_Student
+where sage>=28 and sage<=30
+
+select sname,sgender,sage
+from t_Student
+where sage not between 28 and 30
+
+select sname,sgender 
+from t_Student 
+where sdept in ('CS','MA')
+
+select sno,sname,sgender 
+from t_Student
+where sname like 'Liu%'
+
+select sno,sname,sgender 
+from t_Student 
+where sname like '____Y%'
+
+select*
+from t_course
+where CName like'DA[_]%i_'
+
+select sno,sname,SImage 
+from t_Student 
+where SImage is null
+
+select sno,sname,SImage 
+from t_Student 
+where SImage = null
+
+select sno,grade from t_sc 
+where cno=3
+order by grade desc
+
+select * 
+from t_Student
+order by sdept,sage desc
+
+select count(*)from t_Student
+select avg(grade)
+from t_SC
+where cno=1
+
+select max(grade)
+from t_SC
+where cno=1
+
+select sum(ccredit)
+from t_SC SC
+join t_Course c on sc.CNo=c.CNo and sc.SNo='200215121'
+
+select cno,count(sno) as Nums
+from t_sc
+group by cno
+
+select sno,count(cno)
+from t_sc
+group by sno
+
+select sno,count(cno)
+from t_sc
+group by sno
+having count(cno) >=3
+
+select sno,avg(grade)
+from t_sc
+group by sno
+having avg(grade)>=85
+
+select sdept,sgender,count(sno) as Num
+from t_student
+group by sdept,sgender
+order by sdept
+
+select s.sno,s.sname,sc.cno,sc.grade
+from t_Student s join t_sc sc on s.sno = sc.sno
+
+select s.sno,s.sname,c.cname,c.ccredit,sc.grade 
+from t_Student s join t_sc sc on s.sno = sc.sno
+join t_Course c on sc.cno = c.cno
+
+select d.sdeptname,s.sno,s.sname,c.cname,c.ccredit,sc.grade 
+from t_Sdept d join t_Student s on d.SdeptID = s.sdept
+join t_sc sc on s.sno = sc.sno
+join t_Course c on sc.cno = c.cno
+
+select sdeptName,Cname,avg(grade) as avgGrade
+from
+(
+select d.sdeptName,c.Cname,sc.grade
+from t_sdept d join t_student s on 
+d.sdeptId = s.sdept join t_sc sc on sc.sno
+= s.sno join t_Course c on c.cno=sc.cno
+) as t
+group by sdeptName,Cname
+order by sdeptName
+
+--Natural Connections results in no students who do not take the course
+select s.sno,s.sname,sc.cno,sc.grade 
+from t_Student s join t_SC sc 
+on s.sno = sc.sno 
+--Left outer connection includes students who did not take the course
+select s.sno,s.sname,sc.cno,sc.grade 
+from t_Student s left join t_SC sc 
+on s.sno = sc.sno
+
+--Natural Connect results do not include courses not taken by students
+select sc.cno,sc.grade,c.cname 
+from t_sc sc join t_Course c
+on sc.cno = c.cno 
+--Outside right connections include courses not taken by students
+select sc.cno,sc.grade,c.cname 
+from t_sc sc right join t_Course c
+on sc.cno = c.cno 
+
+--natural connections only show students under the department, students are in a certain department
+select d.SdeptID,s.sno,s.sname 
+from t_sdept d join t_student s
+on d.sdeptID = s.sdept 
+--Left outer link, showing departments without students
+select d.SdeptID,s.sno,s.sname 
+from t_sdept d left join t_student s
+on d.sdeptID = s.sdept 
+--Right outer link, showing students not in any department
+select d.SdeptID,s.sno,s.sname 
+from t_sdept d right join t_student s
+on d.sdeptID = s.sdept 
+--Full connection, shows departments with no students, shows students not in any department
+select d.SdeptID,s.sno,s.sname 
+from t_sdept d full join t_student s
+on d.sdeptID = s.sdept
+
+select d.SdeptID,s.sno,s.sname 
+from t_sdept d cross join t_student s
+
+--First class of first class
+select f.cno,f.cname,s.cpno 
+from t_Course f join t_Course s
+on f.cpno = s.cno
+--The name of the prior lesson of the prior lesson
+select f.cno,f.cname,s.cpno,t.CName
+from t_Course f join t_Course s
+on f.cpno = s.cno join t_Course t
+on s.CPno = t.cno
+--First class of first class of first class
+select f.cno,f.cname,t.cpno
+from t_Course f join t_Course s
+on f.cpno = s.cno join t_Course t
+on s.CPno = t.cno
+--The name of the prior class of the prior class of the prior class
+select f.cno,f.cname,fr.cno,fr.cname
+from t_course f join t_course s 
+on f.cpno = s.cno join t_course t
+on s.cpno = t.cno join t_course fr
+on t.cpno = fr.cno
+
+select s.sname 
+from t_Student s join t_sc sc 
+on s.sno = sc.sno and sc.cno = '2'
+
+select sname
+from t_Student
+where sno in
+(
+select sno from t_sc
+where cno='2'
+)
+
+select sno,sname 
+from t_Student 
+where sno in
+( 
+ select sno from t_sc
+ where cno in
+ (
+ select cno from t_Course
+ where cname = 'information system'
+  )
+)
+
+select s.sno,s.sname 
+from t_Student s 
+join t_sc sc on s.sno =sc.sno
+join t_Course c on sc.cno = c.cno
+where c.CName = 'Information System'
+
+select s1.sno,s1.cno,s1.grade from t_sc s1
+where grade >=
+(
+ select avg(grade) from t_sc s2
+ where s1.sno = s2.sno
+)
+
+select sc.sno,sc.cno,sc.grade
+from t_sc sc 
+join 
+(select sno,avg(grade) as avgGrade
+from t_SC group by sno) as scv 
+on sc.sno = scv.sno and sc.grade >= scv.avgGrade
+
+select scx.sno,scx.cno,scx.grade
+from t_sc scx 
+where scx.grade >
+(
+ select avg(grade) from t_sc scy 
+ where scx.cno = scy.cno 
+)
+select sc.sno,sc.cno,sc.grade
+from t_sc sc 
+join 
+(select cno,avg(grade) as avgGrade
+from t_SC group by cno) as scv 
+on sc.cno = scv.cno and sc.grade > scv.avgGrade
+
+select sname 
+from t_Student s
+where not exists
+(
+select * from t_sc sc 
+ where s.sno = sc.sno and sc.cno = '1'
+)
+
+select s.sno,s.sname,sc.cno 
+from t_Student s join t_sc sc
+on s.sno = sc.sno and sc.cno <> '1'
+
+select distinct s.sno,s.sname 
+from t_Student s join t_sc sc
+on s.sno = sc.sno and sc.sno not in
+(
+ select sno from t_sc where cno = '1'
+)
+union
+select sno,sname from t_Student
+where sno not in 
+( 
+ select distinct sno from t_sc
+)
+
+select sname 
+from t_Student s
+where not exists(
+select *
+from t_Course c
+where not exists (
+select * from t_sc sc
+where s.sno = sc.sno and c.cno = sc.cno
+  )
+)
+
+delete t_sc where sno = '200215121'
+delete t_Student where sno = '200215121'

@@ -1,0 +1,12 @@
+C:\Users\Alex Joshua Chirwa\Desktop\StdMng2023\StdMng2023\bin\Debug\StdMng2023.exe.config
+C:\Users\Alex Joshua Chirwa\Desktop\StdMng2023\StdMng2023\bin\Debug\StdMng2023.exe
+C:\Users\Alex Joshua Chirwa\Desktop\StdMng2023\StdMng2023\bin\Debug\StdMng2023.pdb
+C:\Users\Alex Joshua Chirwa\Desktop\StdMng2023\StdMng2023\obj\Debug\StdMng2023.csproj.AssemblyReference.cache
+C:\Users\Alex Joshua Chirwa\Desktop\StdMng2023\StdMng2023\obj\Debug\StdMng2023.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alex Joshua Chirwa\Desktop\StdMng2023\StdMng2023\obj\Debug\StdMng2023.FmMain.resources
+C:\Users\Alex Joshua Chirwa\Desktop\StdMng2023\StdMng2023\obj\Debug\StdMng2023.Properties.Resources.resources
+C:\Users\Alex Joshua Chirwa\Desktop\StdMng2023\StdMng2023\obj\Debug\StdMng2023.csproj.GenerateResource.cache
+C:\Users\Alex Joshua Chirwa\Desktop\StdMng2023\StdMng2023\obj\Debug\StdMng2023.csproj.CoreCompileInputs.cache
+C:\Users\Alex Joshua Chirwa\Desktop\StdMng2023\StdMng2023\obj\Debug\StdMng2023.exe
+C:\Users\Alex Joshua Chirwa\Desktop\StdMng2023\StdMng2023\obj\Debug\StdMng2023.pdb
+C:\Users\Alex Joshua Chirwa\Desktop\StdMng2023\StdMng2023\obj\Debug\StdMng2023.StdMng.fmStdADO.resources
