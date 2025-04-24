@@ -93,12 +93,53 @@ This experience helped me grow as a **collaborative developer** — learning how
 
 ## 📸 Screenshots
 
-We’ll embed:
-- Main Dashboard
-- Add/Edit Student Form
-- Entity Relationship Diagram
-- Department Selection Drop-down
-- Backend SQL Queries in action
+### 🪪Windows Authentication
+![Windows Authentication](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/Windows-Authentication.png)
+
+### 👩‍💻SQL Server Authentication requires
+![SQL Server Authentication requires](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/SQL-Server-Authentication-requires.png)
+
+### 🪢Database Relationship Diagram
+![Database Relationship Diagram](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/Database-Relationship-Diagram.png)
+
+### 🚀the query of the database
+![the query of the database](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/the-query-of-the-database.png)
+
+### ✅t_Student table
+![t_Student table](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/t_Student-table.png)
+
+### ✅t_Course table
+![t_Course table](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/t_Course-table.png)
+
+### ✅t_SC table
+![t_SC table](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/t_SC-table.png)
+
+### ✅t_Sdept table
+![t_Sdept table](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/t_Sdept-table.png)
+
+### 🧱Configure the new Windows Forms Application
+![Configure the new Windows Forms Application](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/Configure-the-new-Windows-Forms-Application.png)
+
+### 🧱⚒️Windows form and Solution Explorer
+![Windows form and Solution Explorer](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/Windows-form-and-Solution-Explorer.png)
+
+### 🧱⚒️Modifying the form name
+![Modifying the form name](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/Modifying-the-form-name.png)
+
+### 🤺Application main form interface
+![Application main form interface](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/Application-main-form-interface.png)
+
+### 🪢Database connection string settings
+![Database connection string settings](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/Database-connection-string-settings.png)
+
+### 👦🏾👧🏾Gender drop down box data binding
+![Gender drop down box data binding](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/Gender-drop-down-box-data-binding.png)
+
+### 👩‍💻Student Management Form
+![Student Management Form](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/Student-Management-Form.png)
+
+### 📝Insert student information
+![Insert student information](https://raw.githubusercontent.com/AlexChirwa/Development-of-student-management-system/main/screenshots/Insert-student-information.png)
 
 
 
